@@ -21,28 +21,54 @@ namespace GEOIPLocalization.Net.Services
 
         public IPInformation GetLocalization(string ip)
         {
-            using (WebClient wc = new WebClient())
+            try
+            {
+                using (WebClient wc = new WebClient())
+                {
+                    var jsonData = wc.DownloadData($"http://ipinfo.io/{ip}/geo");
+                    var json = Encoding.UTF8.GetString(jsonData);
+                    IPInformation ipInf = new IPInformation();
+                    MemoryStream ms = new MemoryStream(Encoding.UTF8.GetBytes(json));
+                    DataContractJsonSerializer ser = new DataContractJsonSerializer(ipInf.GetType());
+                    ipInf = ser.ReadObject(ms) as IPInformation;
+                    ms.Close();
+                    return ipInf;
+                }
+            }
+            catch (InvalidOperationException ex)
             {
 
-                var json = wc.DownloadString($"http://ipinfo.io/{ip}/geo");
-                IPInformation ipInf = new IPInformation();
-                MemoryStream ms = new MemoryStream(Encoding.UTF8.GetBytes(json));
-                DataContractJsonSerializer ser = new DataContractJsonSerializer(ipInf.GetType());
-                ipInf = ser.ReadObject(ms) as IPInformation;
-                ms.Close();
-                return ipInf;
+                throw new Exceptions.InvalidServerReponse(ex.Message);
             }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+           
 
         }
 
         public string GetRemoteInternetAddress()
         {
-            using (WebClient wc = new WebClient())
+            try
+            {
+                using (WebClient wc = new WebClient())
             {
                 var req = wc.DownloadString("http://icanhazip.com/");
                 return req;
             }
-            return string.Empty;
+            }
+            catch (InvalidOperationException ex)
+            {
+
+                throw new Exceptions.InvalidServerReponse(ex.Message);
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

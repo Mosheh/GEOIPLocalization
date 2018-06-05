@@ -18,7 +18,14 @@ namespace GEOIPLocalization.Tests
         public void TestGoianiaLocalization()
         {
             var obj = new LocalizationService().GetLocalization();
-            Assert.AreEqual("Goiania", obj.City);
+            Assert.AreEqual("Goiânia", obj.City);
+        }
+
+        [TestMethod]
+        public void TestRioDeJaneiroLocalization()
+        {
+            var obj = new LocalizationService().GetLocalization("186.192.90.5");
+            Assert.AreEqual("Rio de Janeiro", obj.City);
         }
     }
 }
