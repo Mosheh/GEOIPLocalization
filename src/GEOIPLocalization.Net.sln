@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GEOIPLocalization.Net", "GEOIPLocalization.Net\GEOIPLocalization.Net.csproj", "{EEFBD7BD-AE87-48CB-B84B-C87932BD989A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GEOIPLocalization.Tests", "GEOIPLocalization\GEOIPLocalization.Tests.csproj", "{9569FDC5-E09E-4396-9A05-A3AC81BB6BBB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EEFBD7BD-AE87-48CB-B84B-C87932BD989A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEFBD7BD-AE87-48CB-B84B-C87932BD989A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEFBD7BD-AE87-48CB-B84B-C87932BD989A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEFBD7BD-AE87-48CB-B84B-C87932BD989A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9569FDC5-E09E-4396-9A05-A3AC81BB6BBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9569FDC5-E09E-4396-9A05-A3AC81BB6BBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9569FDC5-E09E-4396-9A05-A3AC81BB6BBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9569FDC5-E09E-4396-9A05-A3AC81BB6BBB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
